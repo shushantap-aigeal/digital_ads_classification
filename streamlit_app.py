@@ -8,7 +8,7 @@ data = pd.read_csv(data_file_path)
 data.dropna(inplace=True)
 data.reset_index(drop=True)
 
-st.header("Inferencing Digital Advertisment Classification")
+st.header("Advertisment Classifier")
 
 text = st.text_area("INPUT_TEXT_FOR_ANALYSIS", height=200, placeholder=None)
 inference_obj = Inferencing()

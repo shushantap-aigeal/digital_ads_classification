@@ -23,8 +23,9 @@ if st.button("PREDICT"):
     predicted_score_categories = predicted_output["scores_table"]
 
     # st.write("**INPUT TEXT** :", predicted_output["text"])
-    st.success(predicted_output["label_definition"])
-    st.progress(round(predicted_output["score"]*100))
+    score = round(predicted_output["score"]*100)
+    st.success(predicted_output["label_definition"], score)
+    st.progress(score)
     st.write("**SCORES FOR EACH CATEGORY** :")
 
     st.json(predicted_score_categories)

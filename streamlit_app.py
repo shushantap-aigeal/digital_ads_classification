@@ -10,10 +10,10 @@ data.reset_index(drop=True)
 
 st.header("Advertisment Classifier")
 
-text = st.text_area("INPUT_TEXT_FOR_ANALYSIS", height=200, placeholder=None)
+text = st.text_area(" ", height=200, placeholder=None)
 inference_obj = Inferencing()
 
-if st.button("Predict"):
+if st.button("PREDICT"):
 
     cleaned_text = inference_obj.preprocessing(text)
     features = inference_obj.feature_extract(
@@ -22,12 +22,14 @@ if st.button("Predict"):
     predicted_output = inference_obj.predict_text(cleaned_text, features, model)
     predicted_score_categories = predicted_output["scores_table"]
 
-    st.write("**INPUT TEXT** :", predicted_output["text"])
-    st.write("**PREDICTED CATEGORY** :", predicted_output["label_definition"])
-    st.write("**PREDICTED SCORE** :", predicted_output["score"])
+    # st.write("**INPUT TEXT** :", predicted_output["text"])
+    st.success("**PREDICTED CATEGORY** :", predicted_output["label_definition"])
+    st.progress("**PREDICTED SCORE** :", predicted_output["score"])
     st.write("**SCORES FOR EACH CATEGORY** :")
+
     st.json(predicted_score_categories)
     predicted_label = predicted_output["label_definition"]
+    
     if predicted_label:
         select_data = data[data.JobType == predicted_label]
         st.subheader("Similar Digital Advertisments")

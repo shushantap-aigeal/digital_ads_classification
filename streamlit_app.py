@@ -23,7 +23,7 @@ if st.button("PREDICT"):
     predicted_score_categories = predicted_output["scores_table"]
 
     # st.write("**INPUT TEXT** :", predicted_output["text"])
-    st.success("**PREDICTED CATEGORY** :", predicted_output["label_definition"])
+    st.success(predicted_output["label_definition"])
     st.progress("**PREDICTED SCORE** :", predicted_output["score"])
     st.write("**SCORES FOR EACH CATEGORY** :")
 

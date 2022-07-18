@@ -13,7 +13,7 @@ A machine learning model used to perform multiclass-classification on various ty
 ## How to run 
 - Create new environment using conda : conda create -n env_name
 - Install necessary dependencies : pip3 install -r requirements.txt
-- Clone the repo : git clone https://github.com/priyanka36/DigitalAdvertismentClassification 
+- Clone the repo
 - To run the file through code : python3 main.py
 - To run the file for demo using streamlit : streamlit run streamlit_app.py 
 

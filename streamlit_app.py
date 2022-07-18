@@ -33,7 +33,7 @@ if st.button("PREDICT"):
     
     if predicted_label:
         select_data = data[data.JobType == predicted_label]
-        st.subheader("Similar Digital Advertisments")
+        st.subheader("Similar Ads")
         select_data = select_data[["title"]][:5]
         select_data = select_data.reset_index(drop=True)
         st.dataframe(select_data)
